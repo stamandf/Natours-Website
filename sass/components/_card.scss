@@ -16,8 +16,9 @@
         top: 0;
         left: 0;
         width: 100%;
-        backface-visibility: hidden;
+        backface-visibility: hidden; //To hide the back-side of card
         border-radius: 3px;
+        overflow: hidden; //to prevent image from overflowing on the border-radius. 
         box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
         &--front {
@@ -44,8 +45,13 @@
     &__picture {
         background-size: cover;
         height: 23rem;
+        background-blend-mode: screen; //does not work on IE or Edge
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);//does not work on IE or Edge
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+
         &--1 {
-            background-image: url(../img/nat-5.jpg);
+            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);
         }
         &--2 {
             background-image: url(../img/nat-5.jpg);
