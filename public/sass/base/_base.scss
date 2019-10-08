@@ -31,3 +31,7 @@ body {
         padding: 0; //1rem = 8px; 8px/16px = 50%
     }
 }
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
